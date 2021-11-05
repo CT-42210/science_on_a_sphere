@@ -3,6 +3,12 @@ import serial
 
 sg.theme('Dark Grey 13')
 
+# this is the port for my ras pi. the good news about this is that i dont think the bus for the pi will change.
+#, to find yours go to terminal and type:
+#       ls /dev/tty
+# then click the tab key
+# of all the possible options, i recognised ttyS0, ttyS1, and ttyACM0. the third worked for me.
+# good luck, i dont know how i did this either
 ser = serial.Serial('/dev/ttyACM0',9600)
 
 def button1():

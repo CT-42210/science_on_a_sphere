@@ -28,10 +28,17 @@ dispatch_dictionary = {
     '4':button4
 }
 
-layout = [[sg.Text('Click a button', auto_size_text=True)],
-          [sg.Button('1'), sg.Button('2'), sg.Button('3'), sg.Button('4'), sg.Quit()]]
+dispatch_dictionary = {
+    'Purple':button1,
+    'Blue':button2,
+    'Red':button3,
+    'Off':button4
+}
 
-window = sg.Window('>:)', layout)
+layout = [[sg.Text('Click a button', auto_size_text=True)],
+          [sg.Button('Purple'), sg.Button('Blue'), sg.Button('Red'), sg.Button('Off'), sg.Quit()]]
+
+window = sg.Window('science on a sphere', layout)
 
 def byte_machine(string):
 

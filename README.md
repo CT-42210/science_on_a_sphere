@@ -1,8 +1,4 @@
 # science_on_a_sphere
-
-a literal war crime
-
-
 makes 8 lights light up on a breadboard to shine into a ball to make the ball change colors
 
 mbed.ccp is the code for mbed

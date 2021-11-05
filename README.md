@@ -3,7 +3,7 @@ makes 8 lights light up on a breadboard to shine into a ball to make the ball ch
 
 mbed.ccp is the code for mbed
 
-mac_main.py is the file that can controll it from my mac
+mac_main.py is the file that can control it from my mac
 
 pi_main.py is the file that can control it from the raspberry pi im using. (i know its ironic, controlling a controler from a controler.)
 

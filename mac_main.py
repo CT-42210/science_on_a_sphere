@@ -3,6 +3,10 @@ import serial
 
 sg.theme('Dark Grey 13')
 
+# this is the port for my mac, to find yours go to terminal and type:
+#       screen /dev/tty.usb
+# then click the tab key, it should autofill the port assuming the mbed is connected
+# good luck, i dont know how i did this either
 ser = serial.Serial('/dev/tty.usbmodem102',9600)
 
 def button1():
@@ -22,16 +26,16 @@ def button4():
     ser.write(encoded)
 
 dispatch_dictionary = {
-    '1':button1,
-    '2':button2,
-    '3':button3,
-    '4':button4
+    'Purple':button1,
+    'Blue':button2,
+    'Red':button3,
+    'Off':button4
 }
 
 layout = [[sg.Text('Click a button', auto_size_text=True)],
-          [sg.Button('1'), sg.Button('2'), sg.Button('3'), sg.Button('4'), sg.Quit()]]
+          [sg.Button('Purple'), sg.Button('Blue'), sg.Button('Red'), sg.Button('Off'), sg.Quit()]]
 
-window = sg.Window('>:)', layout)
+window = sg.Window('science on a sphere', layout)
 
 def byte_machine(string):
 

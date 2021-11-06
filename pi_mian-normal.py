@@ -217,7 +217,7 @@ def button8():
 
 
 def button9():
-    sg.popup('tomfoolery is disabled on this version', keep_on_top=True)
+    sg.popup('tomfoolery is disabled on this version\nhead to the github page to find the full version', keep_on_top=True)
 
 
 dispatch_dictionary = {

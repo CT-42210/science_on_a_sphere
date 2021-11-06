@@ -7,6 +7,10 @@ mac_main.py is the file that can control it from my mac
 
 pi_main.py is the file that can control it from the raspberry pi im using. (i know its ironic, controlling a controler from a controler.)
 
+the -full varients are what you want. everything with a little bit of fun. 
+
+the -normal varients have the easter eggs disabled
+
 the -basic varients are much simpler, they dont have the customisation features, explanation, or about buttons
 
 i dont have the links to the parts, so im sorry on that front. check "#"s on the py files to figure out how to find the right bus for the usb connector.

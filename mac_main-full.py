@@ -127,7 +127,7 @@ def button6():
         else:
             if event == 'OK':
                 window2.close()
-            elif event != 'Set Custom Colors':
+            elif event != 'OK':
                 if event in ('Quit', 'Back', 'None', sg.WIN_CLOSED):
                     window2.close()
                 elif event not in ('Quit', 'Back', 'None', sg.WIN_CLOSED):
@@ -168,9 +168,128 @@ def button7():
         else:
             if event == 'OK':
                 window3.close()
-            elif event != 'Set Custom Colors':
+            elif event != 'OK':
                 if event in ('Quit', 'Back', 'None', sg.WIN_CLOSED):
                     window3.close()
+                elif event not in ('Quit', 'Back', 'None', sg.WIN_CLOSED):
+                    if event in dispatch_dictionary:
+                        func_to_call = dispatch_dictionary[event]
+                        func_to_call()
+                    else:
+                        print('Event {} not in dispatch dictionary'.format(event))
+
+
+def button8():
+    layout4 = [
+        [sg.Text("Fake Science On A Sphere\nMade by Nick Troiano and Dr. Evangelista\nfrom Morristown Beard School\n"
+                 "2021 Physics Dollhouse Project")],
+        [sg.Button('Git Page'), sg.Button('MBS Website'), sg.Button('Emails')],
+        [ sg.Button('OK'), sg.Button('???????')]
+    ]
+
+    window4 = sg.Window('About', layout4, keep_on_top=True, finalize=True)
+
+    while True:
+        event, value = window4.read()
+        if event == sg.WIN_CLOSED:
+            break
+        else:
+            if event == 'OK':
+                window4.close()
+            elif event == 'Git Page':
+                sg.popup('https://github.com/CT-42210/science_on_a_sphere', keep_on_top=True)
+            elif event == 'MBS Website':
+                sg.popup('https://mbs.net', keep_on_top=True)
+            elif event == 'Emails':
+                sg.popup("Nick Troiano - [ ntroiano_25@mbs.net ]\n"
+                         "Dennis Evangelista - [ devangelista@mbs.net ]", keep_on_top=True)
+            elif event != 'OK':
+                if event in ('Quit', 'Back', 'None', sg.WIN_CLOSED):
+                    window4.close()
+                elif event not in ('Quit', 'Back', 'None', sg.WIN_CLOSED):
+                    if event in dispatch_dictionary:
+                        func_to_call = dispatch_dictionary[event]
+                        func_to_call()
+                    else:
+                        print('Event {} not in dispatch dictionary'.format(event))
+
+
+def button9():
+    layout5 = [
+        [sg.Text("choose wisely")],
+        [sg.Text("The sky is:")],
+        [sg.Button('purple'), sg.Button('3.14159...')],
+        [sg.Button('what the shit')]
+    ]
+
+    window5 = sg.Window('tomfoolery', layout5, keep_on_top=True, finalize=True)
+
+    while True:
+        event, value = window5.read()
+        if event == sg.WIN_CLOSED:
+            break
+        else:
+            if event == 'what the shit':
+                # ------ Menu Definition ------ #
+                menu_def = [['File', ['Open', 'Save', 'Exit', 'Properties']],
+                            ['Edit', ['Paste', ['Special', 'Normal', ], 'Undo'], ],
+                            ['Help', 'About...'], ]
+
+                # ------ Column Definition ------ #
+                column1 = [[sg.Text('Column 1', background_color='#F7F3EC', justification='center', size=(10, 1))],
+                           [sg.Spin(values=('Spin Box 1', '2', '3'), initial_value='Spin Box 1')],
+                           [sg.Spin(values=('Spin Box 1', '2', '3'), initial_value='Spin Box 2')],
+                           [sg.Spin(values=('Spin Box 1', '2', '3'), initial_value='Spin Box 3')]]
+
+                layout = [
+                    [sg.Menu(menu_def, tearoff=True)],
+                    [sg.Text('get trolled lol', size=(30, 1), justification='center',
+                             font=("Helvetica", 25), relief=sg.RELIEF_RIDGE)],
+                    [sg.Text('Here is some text.... and a place to enter text')],
+                    [sg.InputText('This is my text')],
+                    [sg.Frame(layout=[
+                        [sg.Checkbox('Checkbox', size=(10, 1)), sg.Checkbox('My second checkbox!', default=True)],
+                        [sg.Radio('My first Radio!     ', "RADIO1", default=True, size=(10, 1)),
+                         sg.Radio('My second Radio!', "RADIO1")]], title='Options', title_color='red',
+                        relief=sg.RELIEF_SUNKEN, tooltip='Use these to set flags')],
+                    [sg.Multiline(default_text='This is the default Text should you decide not to type anything',
+                                  size=(35, 3)),
+                     sg.Multiline(default_text='A second multi-line', size=(35, 3))],
+                    [sg.InputCombo(('Combobox 1', 'Combobox 2'), size=(20, 1)),
+                     sg.Slider(range=(1, 100), orientation='h', size=(34, 20), default_value=85)],
+                    [sg.InputOptionMenu(('Menu Option 1', 'Menu Option 2', 'Menu Option 3'))],
+                    [sg.Listbox(values=('Listbox 1', 'Listbox 2', 'Listbox 3'), size=(30, 3)),
+                     sg.Frame('Labelled Group', [[
+                         sg.Slider(range=(1, 100), orientation='v', size=(5, 20), default_value=25),
+                         sg.Slider(range=(1, 100), orientation='v', size=(5, 20), default_value=75),
+                         sg.Slider(range=(1, 100), orientation='v', size=(5, 20), default_value=10),
+                         sg.Column(column1, background_color='#F7F3EC')]])],
+                    [sg.Text('_' * 80)],
+                    [sg.Text('Choose A Folder', size=(35, 1))],
+                    [sg.Text('Your Folder', size=(15, 1), auto_size_text=False, justification='right'),
+                     sg.InputText('Default Folder'), sg.FolderBrowse()],
+                    [sg.Submit(tooltip='Click to submit this window'), sg.Cancel()]
+                ]
+
+                window = sg.Window('war crimes', layout, default_element_size=(40, 1), grab_anywhere=False, keep_on_top=True)
+
+                window.read()
+
+                window.close()
+            elif event == 'purple':
+                sg.Print("------------------------------------"
+                         "\n░░░░░▄▄▄▄▀▀▀▀▀▀▀▀▄▄▄▄▄▄░░░░░░░\n░░░░░█░░░░▒▒▒▒▒▒▒▒▒▒▒▒░░▀▀▄░░░░\n░░░░█░░░▒▒▒▒▒▒░░░░░░░░▒▒▒░░█░░░\n░░░█░"
+                         "░░░░░▄██▀▄▄░░░░░▄▄▄░░░░█░░\n░▄▀▒▄▄▄▒░█▀▀▀▀▄▄█░░░██▄▄█░░░░█░\n█░▒█▒▄░▀▄▄▄▀░░░░░░░░█░░░▒▒▒▒▒░█\n█░▒█░█▀▄▄"
+                         "░░░░░█▀░░░░▀▄░░▄▀▀▀▄▒█\n░█░▀▄░█▄░█▀▄▄░▀░▀▀░▄▄▀░░░░█░░█░\n░░█░░░▀▄▀█▄▄░█▀▀▀▄▄▄▄▀▀█▀██░█░░\n░░░█░░░░██░░▀"
+                         "█▄▄▄█▄▄█▄████░█░░░\n░░░░█░░░░▀▀▄░█░░░█░█▀██████░█░░\n░░░░░▀▄░░░░░▀▀▄▄▄█▄█▄█▄█▄▀░░█░░\n░░░░░░░▀▄▄░▒▒▒▒░░"
+                         "░░░░░░░░▒░░░█░\n░░░░░░░░░░▀▀▄▄░▒▒▒▒▒▒▒▒▒▒░░░░█░\n░░░░░░░░░░░░░░▀▄▄▄▄▄░░░░░░░░█░░\n"
+                         "------------------------------------", keep_on_top=True)
+            elif event == '3.14159...':
+                sg.popup('incorect', keep_on_top=True)
+
+            elif event != 'what the shit':
+                if event in ('Quit', 'Back', 'None', sg.WIN_CLOSED):
+                    window5.close()
                 elif event not in ('Quit', 'Back', 'None', sg.WIN_CLOSED):
                     if event in dispatch_dictionary:
                         func_to_call = dispatch_dictionary[event]
@@ -187,11 +306,13 @@ dispatch_dictionary = {
     'Custom Colors':button5,
     'How It Works':button6,
     'Binary Legend':button7,
+    'About':button8,
+    '???????':button9
 }
 
 layout = [[sg.Text('Click a button', auto_size_text=True)],
           [sg.Button('Purple'), sg.Button('Blue'), sg.Button('Red'), sg.Button('Off')],
-          [sg.Button('Custom Colors'), sg.Quit()]]
+          [sg.Button('About'), sg.Button('Custom Colors'), sg.Quit()]]
 
 window = sg.Window('science on a sphere', layout, size=(200,100))
 

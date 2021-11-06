@@ -1,4 +1,4 @@
-i went on power trip and made this terrist weapon
+i went on power trip and made this terrorist weapon
 
 dont ask, i dont think it works either
 

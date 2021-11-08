@@ -1,7 +1,7 @@
 # science_on_a_sphere
 makes 8 lights light up on a breadboard to shine into a ball to make the ball change colors
 
-mbed.ccp is the code for mbed
+mbed.ccp is the code for mbed, for better repository explaining this see https://github.com/devangel77b/troiano
 
 mac_main.py is the file that can control it from my mac
 

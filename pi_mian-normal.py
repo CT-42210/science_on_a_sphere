@@ -236,7 +236,7 @@ layout = [[sg.Text('Click a button', auto_size_text=True)],
           [sg.Button('Purple'), sg.Button('Blue'), sg.Button('Red'), sg.Button('Off')],
           [sg.Button('About'), sg.Button('Custom Colors'), sg.Quit()]]
 
-window = sg.Window('science on a sphere', layout, size=(200,100))
+window = sg.Window('science on a sphere', layout)
 
 
 def byte_machine(string):
